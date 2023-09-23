@@ -1,67 +1,365 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>swatter</title>
+<!-- saved from url=(0025)https://fuckbloxybet.lol/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>kys</title>
+    <meta name="description" content="Varlax On Top">
+    <link href="./wah#00021_files/all.min.css" rel="stylesheet"> <!-- Font Awesome CSS for social icons -->
+    <style>
+        body {
+            background-image: url("https://media.discordapp.net/attachments/972533899462836334/1082278462879961128/a_ba9be5961ed5e55b362352dfd3b3e024.gif");
+            background-size: cover;
+            font-family: sans-serif;
+            height: 100vh;
+            margin: 0;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 999;
+        }
+        .overlay-text {
+            color: #fff;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0px 0px 10px #fff;
+            cursor: pointer;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(128, 128, 128, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .container.show {
+            opacity: 1;
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 0;
+            height: 100%;
+            width: 10px;
+            background: linear-gradient(to right, rgba(128, 128, 128, 0) 0%, rgba(128, 128, 128, 0.7) 50%, rgba(128, 128, 128, 0) 100%);
+        }
+        .profile-pic {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+        .profile-pic img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0px 0px 10px #fff;
+        }
+        .description {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0px 0px 10px #fff;
+            display: inline-block;
+        }  
+        .description::after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 0;
+            height: 100%;
+            width: 10px;
+            background: linear-gradient(to right, rgba(128, 128, 128, 0) 0%, rgba(128, 128, 128, 0.7) 50%, rgba(128, 128, 128, 0) 100%);
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            width: 60px;
+            height: 60px;
+            background-color: transparent;
+            color: #fff;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: opacity 0.3s ease-in-out;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+        .social-links a i {
+            font-size: 30px; /* Updated font size for social icons */
+        }
+        .snowfall {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .song-player-progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./verlox_files/main.css">
-<link rel="stylesheet" href="./verlox_files/cte.css">
+        .song-player-progress-bar-fill {
+            height: 100%;
+            background-color: #fff;
+            border-radius: 5px;
+            width: 0;
+            transition: width 0.3s ease-in-out;
+        }
 
-<script async="" src="./verlox_files/js"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        .song-player-controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    gtag('config', 'G-RD5B41KFXM');
-  </script>
-<style>@keyframes marqueeAnimation-6900819  { 100%  {transform:translateX(-558.438px)}}</style></head>
+        .song-player-controls button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .song-player-controls button:hover {
+            opacity: 0.7;
+        }
+
+        .song-player-time {
+            color: #fff;
+            margin-top: 10px;
+        }
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
+    </style>
+</head>
 <body>
-<div id="particles-container"><canvas class="particles-js-canvas-el click clicked" width="1865" height="933" style="width: 100%; height: 100%;"></canvas></div>
-<audio controls="" hidden="" loop="">
-<source src="assets/audio/song.mp3" type="audio/mpeg">
-</audio>
-<div id="content-container" style="opacity: 1;" class="fadeIn">
-<div class="center title topbar"><img class="emoji" src="./verlox_files/seperator.png"> swatters.xyz <img class="emoji" src="./verlox_files/seperator.png"></div>
-<span id="typing" class="center">daddysmurf#0001</span>
-<div class="inline-container bottombar center">
+    <div class="overlay">
+        <div class="overlay-text" onclick="showContainer()">Click to Enter</div>
+    </div>
+    <div class="container show" style="overflow: hidden;">
+        <div class="profile-pic">
+            <img src="https://cdn.discordapp.com/attachments/1155205239335559311/1155224057889960036/pfps.jpg" alt="profile picture">
+        </div>
+        <div class="name">daddysmurf</div>
+        <div class="description">
+            <span class="typed">daddysmurf0001</span>
+            <span class="cursor"></span>
+        </div>
+        <div class="social-links">
+            <!--blank-->            <!--blank-->            <!--blank-->            <!--blank-->            <!--blank-->            <!--blank-->            <!--blank-->            <!--blank-->        </div>
+        <div class="song-player">
+            <div class="song-player-progress-bar">
+                <div class="song-player-progress-bar-fill"></div>
+            </div>
+            <div class="song-player-controls">
+                <button id="playPauseButton" onclick="togglePlayPause()">
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+            <div class="song-player-time"></div>
+        </div>
+    </div>
 
-<pre style="display: inline-block;">|<div style="vertical-align: middle;" id="marquee"><div style="width: 100000px; transform: translateX(450px); animation: 16.8s linear 1s infinite normal none running marqueeAnimation-6900819;" class="js-marquee-wrapper"><div class="js-marquee" style="margin-right: 0px; float: left;">fuck skids <img class="emoji" src="./verlox_files/seperator.png"> discord terminated <img class="emoji" src="./verlox_files/seperator.png"> Termed X4</div></div></div>|</pre>
+    <audio id="bg-music" src="https://cdn.discordapp.com/attachments/1155205239335559311/1155225089286094899/2man_Step.mp3" loop=""></audio>
+    <script>
+        const typedTextSpan = document.querySelector(".typed");
+        const cursorSpan = document.querySelector(".cursor");
+
+        const textArray = ["daddysmurf0001", "Termed X9", "Ratted X2", "Kys Skid"];
+        const typingDelay = 100;
+        const erasingDelay = 50;
+        const newTextDelay = 1000; // Delay between current and next text
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                cursorSpan.classList.remove("typing");
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                cursorSpan.classList.remove("typing");
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+
+        function showContainer() {
+            const overlay = document.querySelector(".overlay");
+            const container = document.querySelector(".container");
+            const audio = document.getElementById("bg-music");
+            overlay.style.opacity = "0";
+            overlay.style.pointerEvents = "none";
+            container.classList.add("show");
+            audio.play(); // Add this line to play the background music
+        }
+
+        const songPlayerProgressBarFill = document.querySelector(".song-player-progress-bar-fill");
+        const songPlayerControls = document.querySelector(".song-player-controls");
+        const playPauseButton = document.getElementById("playPauseButton");
+        const songPlayerTime = document.querySelector(".song-player-time");
+        const bgMusic = document.getElementById("bg-music");
+
+        function togglePlayPause() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                bgMusic.pause();
+                playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+
+        bgMusic.addEventListener("timeupdate", () => {
+            const { currentTime, duration } = bgMusic;
+            const progressPercent = (currentTime / duration) * 100;
+            songPlayerProgressBarFill.style.width = `${progressPercent}%`;
+
+            let currentMinutes = Math.floor(currentTime / 60);
+            let currentSeconds = Math.floor(currentTime % 60);
+            if (currentSeconds < 10) {
+                currentSeconds = `0${currentSeconds}`;
+            }
+
+            let durationMinutes = Math.floor(duration / 60);
+            let durationSeconds = Math.floor(duration % 60);
+            if (durationSeconds < 10) {
+                durationSeconds = `0${durationSeconds}`;
+            }
+
+            songPlayerTime.textContent = `${currentMinutes}:${currentSeconds} / ${durationMinutes}:${durationSeconds}`;
+        });
+
+        songPlayerControls.addEventListener("click", (e) => {
+            const { target } = e;
+
+            if (target && target.matches("button")) {
+                togglePlayPause();
+            }
+        });
+    </script>
+    <div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+    ❅
+  </div>
+  <div class="snowflake">
+    ❆
+  </div>
+  <div class="snowflake">
+    ❅
+  </div>
+  <div class="snowflake">
+    ❆
+  </div>
+  <div class="snowflake">
+    ❅
+  </div>
+  <div class="snowflake">
+    ❆
+  </div>
 </div>
-</div>
-<script src="./verlox_files/particles.min.js.download"></script>
-<script src="./verlox_files/app.js.download"></script>
-<script src="./verlox_files/cte.js.download"></script>
-<script src="./verlox_files/jquery.min.js.download"></script>
-<script src="./verlox_files/jquery.marquee.min.js.download"></script>
-<script src="./verlox_files/typed.js@2.0.12"></script>
-<script>
-    // var CTE = {};
-    CTE.callback = () => {
-      var aud = document.getElementsByTagName("audio")[0];
-      aud.volume = .3;
-      aud.play();
 
-      var typed = new Typed("#typing", {
-        strings: ["", "varlax owns you", "varlax owner", "kys faggot", "discord.gg/TsmmWFRZbe", "daddysmurf0001"],
-        typeSpeed: 30,
-        backspeed: 20,
-        showCursor: false
-      });
-
-      var lines = ["fuck skids", "discord.gg/TsmmWFRZbe", "Termed X9"];
-      for (var x = 0;x < lines.length;x++)
-        $("#marquee").append(`${lines[x]}${(x < lines.length - 1? ' <img class="emoji" src="/assets/images/seperator.png"> ' : '')}`);
-
-      $("#marquee").marquee({
-        duration: 7500,
-        gap: 100,
-        delayBeforeStart: 1000,
-        direction: 'left',
-      });
-    }
-    // CTE.callback();
-  </script>
-<script>(function(){var js = "window['__CF$cv$params']={r:'7d268f5088aaa943',m:'3aoUY0wDEI2bu6qJnEl0h4KLRXyEVsCWWk80eQnd38w-1685948649-0-AYfy3TCJQdkA1VpnSc8t8WM1NO9RGGm468BClMV73XJj',u:'/cdn-cgi/challenge-platform/h/g'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" src="./verlox_files/saved_resource.html"></iframe>
 
 </body></html>
