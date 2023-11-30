@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://fuckbloxybet.lol/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>♫</title>
+    <meta name="description" content="Varlax On Top">
+    <link href="./wah#00021_files/all.min.css" rel="stylesheet"> <!-- Font Awesome CSS for social icons -->
+    <style>
+        body {
+            background-image: url("https://media.discordapp.net/attachments/979016557038563399/1003284669338501251/df2308a00f9b8316d977378d84c58e9c.jpg?ex=6575b529&is=65634029&hm=ac82b84ff2f899856278d6a2a744df7c092b46d3ca2e20b45c42ae4053315a47&=&format=webp");
+            background-size: cover;
+            font-family: sans-serif;
+            height: 100vh;
+            margin: 0;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 999;
+        }
+        .overlay-text {
+            color: #fff;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0px 0px 10px #fff;
+            cursor: pointer;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .container.show {
+            opacity: 1;
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 0;
+            height: 100%;
+            width: 10px;
+            background: linear-gradient(to right, rgba(128, 128, 128, 0) 0%, rgba(128, 128, 128, 0.7) 50%, rgba(128, 128, 128, 0) 100%);
+        }
+        .profile-pic {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+        .profile-pic img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0px 0px 10px #fff;
+        }
+        .description {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0px 0px 10px #fff;
+            display: inline-block;
+        }  
+        .description::after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 0;
+            height: 100%;
+            width: 10px;
+            background: linear-gradient(to right, rgba(128, 128, 128, 0) 0%, rgba(128, 128, 128, 0.7) 50%, rgba(128, 128, 128, 0) 100%);
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            width: 60px;
+            height: 60px;
+            background-color: transparent;
+            color: #fff;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: opacity 0.3s ease-in-out;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+        .social-links a i {
+            font-size: 30px; /* Updated font size for social icons */
+        }
+        .snowfall {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .song-player-progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .song-player-progress-bar-fill {
+            height: 100%;
+            background-color: #1eff00;
+            border-radius: 5px;
+            width: 0;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .song-player-controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .song-player-controls button {
+            background-color: transparent;
+            border: none;
+            color: #000000;
+            font-size: 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .song-player-controls button:hover {
+            opacity: 0.7;
+        }
+
+        .song-player-time {
+            color: rgb(30, 255, 0)050;
+            margin-top: 10px;
+        }
+.snowflake {
+  color: #1eff00;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="overlay-text" onclick="showContainer()">vertox0001</div>
+    </div>
+    <div class="container show" style="overflow: hidden;">
+        <div class="profile-pic">
+            <img src="https://media.discordapp.net/attachments/979016557038563399/1003284669573365862/4fe3f436f7e47d9000b86c792281e579.gif?ex=6575b529&is=65634029&hm=89980d6a37bba8f21d56afca805388e371588207bed3af672098e93dcc29ac74&=" alt="profile picture">
+        </div>
+        <div class="name">vertox</div>
+        <div class="description">
+            <span class="typed"></span>
+            <span class="cursor"></span>
+        </div>
+        <div class="social-links">
+            <!--blank-->            <!--blank-->            <!--blank-->            <!--blank-->            <!--blank-->            <!--blank-->            <!--blank-->            <!--blank-->        </div>
+        <div class="song-player">
+            <div class="song-player-progress-bar">
+                <div class="song-player-progress-bar-fill"></div>
+            </div>
+            <div class="song-player-controls">
+                <button id="playPauseButton" onclick="togglePlayPause()">
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+            <div class="song-player-time"></div>
+        </div>
+    </div>
+
+    <audio id="bg-music" src="https://cdn.discordapp.com/attachments/1178298630227111968/1179652546353184788/Spot_the_Difference_-_ONEFOUR_LYRICS.mp3?ex=657a900b&is=65681b0b&hm=1b328fab2b37198126a10a713c12c6208ea31fcf57559808dfacaca7c3ea19c9&" loop=""></audio>
+    <script>
+        const typedTextSpan = document.querySelector(".typed");
+        const cursorSpan = document.querySelector(".cursor");
+
+        const textArray = ["vouched", "stop stalking nigga", "dont run, dont trip", "L"];
+        const typingDelay = 100;
+        const erasingDelay = 50;
+        const newTextDelay = 1000; // Delay between current and next text
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                cursorSpan.classList.remove("typing");
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                cursorSpan.classList.remove("typing");
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+
+        function showContainer() {
+            const overlay = document.querySelector(".overlay");
+            const container = document.querySelector(".container");
+            const audio = document.getElementById("bg-music");
+            overlay.style.opacity = "0";
+            overlay.style.pointerEvents = "none";
+            container.classList.add("show");
+            audio.play(); // Add this line to play the background music
+        }
+
+        const songPlayerProgressBarFill = document.querySelector(".song-player-progress-bar-fill");
+        const songPlayerControls = document.querySelector(".song-player-controls");
+        const playPauseButton = document.getElementById("playPauseButton");
+        const songPlayerTime = document.querySelector(".song-player-time");
+        const bgMusic = document.getElementById("bg-music");
+
+        function togglePlayPause() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                bgMusic.pause();
+                playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+
+        bgMusic.addEventListener("timeupdate", () => {
+            const { currentTime, duration } = bgMusic;
+            const progressPercent = (currentTime / duration) * 100;
+            songPlayerProgressBarFill.style.width = `${progressPercent}%`;
+
+            let currentMinutes = Math.floor(currentTime / 60);
+            let currentSeconds = Math.floor(currentTime % 60);
+            if (currentSeconds < 10) {
+                currentSeconds = `0${currentSeconds}`;
+            }
+
+            let durationMinutes = Math.floor(duration / 60);
+            let durationSeconds = Math.floor(duration % 60);
+            if (durationSeconds < 10) {
+                durationSeconds = `0${durationSeconds}`;
+            }
+
+            songPlayerTime.textContent = `${currentMinutes}:${currentSeconds} / ${durationMinutes}:${durationSeconds}`;
+        });
+
+        songPlayerControls.addEventListener("click", (e) => {
+            const { target } = e;
+
+            if (target && target.matches("button")) {
+                togglePlayPause();
+            }
+        });
+    </script>
+    <div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+  ✝
+  </div>
+  <div class="snowflake">
+  ✝
+  </div>
+  <div class="snowflake">
+  ✝
+  </div>
+  <div class="snowflake">
+  ✝
+  </div>
+  <div class="snowflake">
+  ✝
+  </div>
+  <div class="snowflake">
+  ✝
+  </div>
+  <div class="snowflake">
+  ✝
+  </div>
+  <div class="snowflake">
+    ✝
+  </div>
+  <div class="snowflake">
+    ✝
+  </div>
+  <div class="snowflake">
+    ✝
+  </div>
+  <div class="snowflake">
+    ✝
+  </div>
+  <div class="snowflake">
+    ✝
+  </div>
+</div>
+
+
+</body></html>
